@@ -1,1 +1,15 @@
 @import 'tailwindcss';
+
+@theme {
+   --color-light-primary: #509bd3;
+   --color-whitesmoke: #f5f5f5;
+}
+
+#nav-menu > ul > li a:not(.active):hover + hr {
+   opacity: 0.625;
+}
+
+#nav-menu > ul > li a.active + hr,
+#nav-menu > ul > li a:not(.active):active + hr {
+   opacity: 1;
+}
