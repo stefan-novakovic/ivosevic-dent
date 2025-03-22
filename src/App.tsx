@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Services from './pages/Services';
 import PriceList from './pages/PriceList';
 import About from './pages/About';
@@ -8,8 +8,8 @@ import Missing from './pages/Missing';
 
 function App() {
    return (
-      <div>
-         <Navbar />
+      <>
+         <Header />
 
          <Routes>
             <Route index element={<Services />} />
@@ -18,7 +18,7 @@ function App() {
             <Route path="kontakt" element={<Contact />} />
             <Route path="*" element={<Missing />} />
          </Routes>
-      </div>
+      </>
    );
 }
 

@@ -1,14 +1,10 @@
 import BounceLoader from 'react-spinners/BounceLoader';
-
-const themeColors: { [key: string]: string } = {
-   'light-primary': '#509bd3',
-   whitesmoke: '#f5f5f5'
-};
+import { themeColors } from '../style/themeColors';
 
 const Loader = () => {
    return (
-      // header height: 61.31px, md: 78.59px
-      <div className="w-full h-[calc(100vh-61.31px)] md:h-[calc(100vh-78.59px)] grid place-content-center">
+      // header height: 67.89px, md: 78.59px
+      <div className="w-full h-[calc(100vh-67.89px)] md:h-[calc(100vh-78.59px)] grid place-content-center">
          <BounceLoader
             // loading={loading}
             color={themeColors['light-primary']}
