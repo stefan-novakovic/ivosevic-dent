@@ -70,7 +70,7 @@ const SidebarMenu = ({
          {isRendered && (
             <div
                id="sidebar-menu"
-               className="w-[300px] h-lvh font-segoe font-semibold fixed block md:hidden top-0 bottom-0 z-[100001] overflow-y-scroll transform duration-[575ms] hide-scrollbar"
+               className="w-[300px] h-lvh font-segoe font-semibold fixed block md:hidden top-0 bottom-0 z-[100001] overflow-y-scroll transform duration-[575ms] no-scrollbar"
                style={{
                   backgroundColor: bgColor,
                   transform:
