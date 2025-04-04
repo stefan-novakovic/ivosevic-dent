@@ -4,7 +4,7 @@ import NavMenu from './NavMenu';
 
 const Header = () => {
    return (
-      <header className="flex justify-between items-center bg-light-primary pl-2 pr-4 py-[10px] md:pl-6 md:pr-12 md:py-[13px]">
+      <header className="flex justify-between items-center bg-light-bg dark:bg-dark-bg transition-colors duration-300 pl-2 pr-4 py-[10px] md:px-[22px] lg:pr-14 md:py-[13px] overflow-hidden relative">
          <LogoWrapper />
          <MobileMenu />
          <NavMenu />

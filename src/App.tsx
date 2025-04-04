@@ -1,14 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Services from './pages/Services';
+import Services from './pages/Home';
 import PriceList from './pages/PriceList';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Missing from './pages/Missing';
+import Footer from './components/Footer';
+import DarkModeContextProvider from './context/DarkModeContext';
 
 function App() {
    return (
-      <>
+      <DarkModeContextProvider>
          <Header />
 
          <Routes>
@@ -18,7 +20,9 @@ function App() {
             <Route path="kontakt" element={<Contact />} />
             <Route path="*" element={<Missing />} />
          </Routes>
-      </>
+
+         <Footer />
+      </DarkModeContextProvider>
    );
 }
 
