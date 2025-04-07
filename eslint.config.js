@@ -15,25 +15,40 @@ export default [
       languageOptions: {
          globals: {
             document: 'readonly',
-            window: 'readonly'
+            window: 'readonly',
+            localStorage: 'readonly',
+            setTimeout: 'readonly',
+            clearTimeout: 'readonly',
+            requestAnimationFrame: 'readonly',
+            cancelAnimationFrame: 'readonly',
+            HTMLDivElement: 'readonly',
+            React: 'writable'
          },
          parser: tsParser,
          parserOptions: {
-            sourceType: 'module'
+            sourceType: 'module',
+            ecmaVersion: 'latest',
+            ecmaFeatures: {
+               jsx: true // ✅ THIS LINE IS ESSENTIAL
+            }
          }
       },
       plugins: {
          '@typescript-eslint': tseslint,
          react: reactPlugin,
          'react-hooks': reactHooks,
-         prettier: prettierPlugin,
-         '@typescript-eslint/no-unused-vars': 'off'
+         prettier: prettierPlugin
       },
       rules: {
          'prettier/prettier': 'error',
          'react/react-in-jsx-scope': 'off',
+         'no-unused-vars': ['warn', { args: 'none' }],
          '@typescript-eslint/explicit-module-boundary-types': 'off',
-         '@typescript-eslint/no-explicit-any': 'warn'
+         '@typescript-eslint/no-explicit-any': 'warn',
+         '@typescript-eslint/no-unused-vars': [
+            'warn',
+            { argsIgnorePattern: '^_' }
+         ]
       },
       settings: {
          react: {

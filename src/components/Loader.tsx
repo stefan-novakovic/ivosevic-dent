@@ -7,7 +7,7 @@ const Loader = () => {
    const { darkMode } = use(DarkModeContext);
    return (
       // header height: 67.89px, md: 78.59px
-      <div className="w-full h-[calc(100vh-67.89px)] md:h-[calc(100vh-78.59px)] grid place-content-center">
+      <div className="grid h-[calc(100vh-67.89px)] w-full place-content-center md:h-[calc(100vh-78.59px)]">
          <BounceLoader
             color={darkMode ? themeColors['dark-bg'] : themeColors['light-bg']}
             size={72}

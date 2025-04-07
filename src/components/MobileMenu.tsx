@@ -42,7 +42,7 @@ const HamburgerButton = ({ color = 'white' }: { color?: string }) => {
 
    return (
       <button
-         className={`flex md:hidden flex-col justify-around w-[34px] h-[28px] p-0.5 relative transition-[scale,translate] ease-in-out select-none outline-none focus-visible:filter focus-visible:opacity-50 ${
+         className={`relative flex h-[28px] w-[34px] flex-col justify-around p-0.5 transition-[scale,translate] ease-in-out outline-none select-none focus-visible:opacity-50 focus-visible:filter md:hidden ${
             hamburgerClicked
                ? 'scale-[1.12] duration-150'
                : 'scale-100 duration-[1100ms]'
@@ -54,7 +54,7 @@ const HamburgerButton = ({ color = 'white' }: { color?: string }) => {
             <div
                key={index}
                style={{ backgroundColor: color }}
-               className="w-full h-1 rounded-[1px]"
+               className="h-1 w-full rounded-[1px]"
             />
          ))}
       </button>
@@ -86,7 +86,7 @@ const SidebarMenu = ({
          {isRendered && (
             <div
                id="sidebar-menu"
-               className="w-[300px] h-lvh font-segoe font-semibold fixed block md:hidden top-0 bottom-0 z-[100001] overflow-y-scroll transition-all duration-[575ms] hide-scrollbar"
+               className="font-segoe hide-scrollbar fixed top-0 bottom-0 z-[100001] block h-lvh w-[300px] overflow-y-scroll font-semibold transition-all duration-[575ms] md:hidden"
                style={{
                   backgroundColor: bgColor,
                   transform:
@@ -110,28 +110,28 @@ const SidebarMenu = ({
                        })
                }}
             >
-               <header className="flex justify-between items-center w-full mt-[7.5px] mb-[18.5px] px-1">
+               <header className="mt-[7.5px] mb-[18.5px] flex w-full items-center justify-between px-1">
                   <div className="w-full">
                      {logo && (
                         <img
-                           className="block w-auto max-w-[164px] h-full max-h-[52px]"
+                           className="block h-full max-h-[52px] w-auto max-w-[164px]"
                            src={logo}
                            alt=""
                         />
                      )}
                   </div>
                   <button
-                     className="w-8 h-8 mt-[10px] mr-[15.5px] relative select-none focus-visible:filter focus-visible:opacity-50"
+                     className="relative mt-[10px] mr-[15.5px] h-8 w-8 select-none focus-visible:opacity-50 focus-visible:filter"
                      onClick={() => handleSidebarMenuToggle(false)}
                      aria-label="Close sidebar menu"
                   >
                      <div
                         style={{ backgroundColor: textColor }}
-                        className="w-[26px] h-1 absolute top-1/2 left-1/2 transform -translate-x-[13px] -translate-y-[2px] rotate-45"
+                        className="absolute top-1/2 left-1/2 h-1 w-[26px] -translate-x-[13px] -translate-y-[2px] rotate-45 transform"
                      />
                      <div
                         style={{ backgroundColor: textColor }}
-                        className="w-[26px] h-1 absolute top-1/2 left-1/2 transform -translate-x-[13px] -translate-y-[2px] rotate-[135deg]"
+                        className="absolute top-1/2 left-1/2 h-1 w-[26px] -translate-x-[13px] -translate-y-[2px] rotate-[135deg] transform"
                      />
                   </button>
                </header>
@@ -153,7 +153,7 @@ const SidebarMenu = ({
                               transitionDuration: '575ms'
                            };
                         }}
-                        className={`block text-[17px] px-7 py-[0.85rem] no-underline tracking-[0.85px] break-words -outline-offset-[3px] select-none tap-highlight-transparent touch-callout-none touch-action-manipulation ${
+                        className={`tap-highlight-transparent touch-callout-none touch-action-manipulation block px-7 py-[0.85rem] text-[17px] tracking-[0.85px] break-words no-underline -outline-offset-[3px] select-none ${
                            openMenu
                               ? 'pointer-events-auto'
                               : 'pointer-events-none'
@@ -170,16 +170,16 @@ const SidebarMenu = ({
                   <div
                      onClick={toggleDarkMode}
                      style={{ color: textColor }}
-                     className={`flex items-center gap-1.5 text-[17px] px-7 py-[0.85rem] tracking-[0.85px] break-words -outline-offset-[3px] select-none tap-highlight-transparent touch-callout-none touch-action-manipulation ${
+                     className={`tap-highlight-transparent touch-callout-none touch-action-manipulation flex items-center gap-1.5 px-7 py-[0.85rem] text-[17px] tracking-[0.85px] break-words -outline-offset-[3px] select-none ${
                         openMenu ? 'pointer-events-auto' : 'pointer-events-none'
                      }`}
                   >
                      REŽIM:
-                     <button className="py-[6px] rounded-full cursor-pointer">
+                     <button className="cursor-pointer rounded-full py-[6px]">
                         {darkMode === false ? (
-                           <BsFillSunFill className="w-[17px] h-[17px] text-text" />
+                           <BsFillSunFill className="text-text h-[17px] w-[17px]" />
                         ) : (
-                           <BsFillMoonStarsFill className="w-[17px] h-[17px] text-text" />
+                           <BsFillMoonStarsFill className="text-text h-[17px] w-[17px]" />
                         )}
                      </button>
                   </div>
@@ -200,7 +200,7 @@ const SidebarMenuOverlay = () => {
                ? { opacity: '1', pointerEvents: 'auto' }
                : { opacity: '0', pointerEvents: 'none' }
          }
-         className="fixed block md:hidden inset-0 w-full min-h-lvh bg-mobile-overlay z-[100000] transition-opacity duration-[575ms]"
+         className="bg-mobile-overlay fixed inset-0 z-[100000] block min-h-lvh w-full transition-opacity duration-[575ms] md:hidden"
          onClick={() => handleSidebarMenuToggle(false)}
       />
    );
