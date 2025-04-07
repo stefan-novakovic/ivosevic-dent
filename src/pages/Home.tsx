@@ -26,42 +26,42 @@ const Services = () => {
 
          <PageLayout className="to-blue-600">
             {/* Services Section */}
-            <h1 className="text-3xl md:text-4xl font-semibold mb-3 text-text-inverse dark:text-text transition-colors duration-200">
+            <h1 className="text-text-inverse dark:text-text mb-3 text-3xl font-semibold transition-colors duration-200 md:text-4xl">
                {servicesTitle}
             </h1>
-            <p className="text-[15.5px] md:text-[17.2px] tracking-wide md:tracking-wider italic mb-6 text-text-inverse dark:text-text transition-colors duration-200">
+            <p className="text-text-inverse dark:text-text mb-6 text-[15.5px] tracking-wide italic transition-colors duration-200 md:text-[17.2px] md:tracking-wider">
                {servicesTitleDesc}
             </p>
             {/* Our Qualities Section */}
-            <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-text-inverse dark:text-text transition-colors duration-200">
+            <h2 className="text-text-inverse dark:text-text mb-3 text-2xl font-semibold transition-colors duration-200 md:text-3xl">
                {ourQualitiesTitle}
             </h2>
-            <ul className="flex flex-col gap-2 mb-14">
+            <ul className="mb-14 flex flex-col gap-2">
                {ourQualitiesList.map((quality, index) => (
                   <li
                      key={index}
-                     className="flex gap-2 items-center text-text-inverse dark:text-text transition-colors duration-200"
+                     className="text-text-inverse dark:text-text flex items-center gap-2 transition-colors duration-200"
                   >
                      {quality.icon}
-                     <span className="text-[17px] md:text-[18px] tracking-wide">
+                     <span className="text-[17px] tracking-wide md:text-[18px]">
                         {quality.text}
                      </span>
                   </li>
                ))}
             </ul>
             {/* Services List Section */}
-            <div className="flex flex-wrap gap-8 justify-center mb-20 max-w-[1100px] 3xl:max-w-none w-full mx-auto">
+            <div className="3xl:max-w-none mx-auto mb-20 flex w-full max-w-[1100px] flex-wrap justify-center gap-8">
                {servicesList.map((service) => (
                   <ServiceCard key={service.name} service={service} />
                ))}
             </div>
             {/* Book Appointment Section */}
-            <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-12 md:gap-[5.5vw] pr-0 md:pr-3">
-               <div className="max-w-[360px] w-full aspect-square select-none animate-bigger-bounce">
+            <div className="flex flex-col-reverse items-center justify-center gap-12 pr-0 md:flex-row md:gap-[5.5vw] md:pr-3">
+               <div className="animate-bigger-bounce aspect-square w-full max-w-[360px] select-none">
                   <img
                      src={bookAppointment.imageSrc}
                      alt=""
-                     className={`max-w-[360px] w-full h-auto transition-[scale,opacity] duration-1000 ${
+                     className={`h-auto w-full max-w-[360px] transition-[scale,opacity] duration-1000 ${
                         homeBookAppointmentImageLoaded
                            ? 'scale-100 opacity-100'
                            : 'scale-[0] opacity-0'
@@ -70,13 +70,13 @@ const Services = () => {
                   />
                </div>
                <div className="flex flex-col items-center gap-4">
-                  <p className="text-xl md:text-2xl tracking-[0.3px] text-center font-semibold bg-light-bg dark:bg-dark-bg-card text-text transition-colors duration-200 px-2 md:px-3 py-1">
+                  <p className="bg-light-bg dark:bg-dark-bg-card text-text px-2 py-1 text-center text-xl font-semibold tracking-[0.3px] transition-colors duration-200 md:px-3 md:text-2xl">
                      {bookAppointment.text}
                   </p>
                   <a
                      href={bookAppointment.phoneHref}
                      title="Pozovite"
-                     className="flex items-center gap-2 text-xl md:text-2xl tracking-[0.3px] text-center md:text-start font-semibold bg-light-bg dark:bg-dark-bg-card text-text px-6 py-3 rounded-4xl outline-3 outline-light-bg dark:outline-dark-bg-card outline-offset-3 transition-colors duration-200 group active:brightness-95"
+                     className="bg-light-bg dark:bg-dark-bg-card text-text outline-light-bg dark:outline-dark-bg-card group flex items-center gap-2 rounded-4xl px-6 py-3 text-center text-xl font-semibold tracking-[0.3px] outline-3 outline-offset-3 transition-colors duration-200 active:brightness-95 md:text-start md:text-2xl"
                   >
                      <IoCallOutline
                         size={30}
@@ -84,7 +84,7 @@ const Services = () => {
                      />
                      <IoCall
                         size={30}
-                        className="pt-[5px] hidden group-hover:block"
+                        className="hidden pt-[5px] group-hover:block"
                      />
 
                      <span>{bookAppointment.phone}</span>
@@ -148,28 +148,28 @@ const ServiceCard = ({ service }: { service: Service }) => {
       }
    };
    return (
-      <div className="w-full max-w-[336px] 3xl:max-w-[280px] bg-light-bg-card dark:bg-dark-bg-card shadow-sm shadow-light-service-card-shadow dark:shadow-dark-service-card-shadow hover:shadow-lg rounded-[6px]  transition-[box-shadow,translate,color,background-color,border-color,outline-color,text-decoration-color,fill] duration-700 hover:-translate-y-1">
-         <div className="w-full max-w-[336px] 3xl:max-w-[280px] aspect-[210/155] overflow-hidden shadow-sm relative">
+      <div className="3xl:max-w-[280px] bg-light-bg-card dark:bg-dark-bg-card shadow-light-service-card-shadow dark:shadow-dark-service-card-shadow w-full max-w-[336px] rounded-[6px] shadow-sm transition-[box-shadow,translate,color,background-color,border-color,outline-color,text-decoration-color,fill] duration-700 hover:-translate-y-1 hover:shadow-lg">
+         <div className="3xl:max-w-[280px] relative aspect-[210/155] w-full max-w-[336px] overflow-hidden shadow-sm">
             <img
                src={service.image}
                alt=""
-               className={`block w-full max-w-[336px] 3xl:max-w-[280px] h-full rounded-t-[6px] object-cover transition-[opacity,blur] duration-[2000ms] ease-in-out ${
+               className={`3xl:max-w-[280px] block h-full w-full max-w-[336px] rounded-t-[6px] object-cover transition-[opacity,blur] duration-[2000ms] ease-in-out ${
                   homeServicesLoadedImages[service.name]
                      ? 'opacity-100'
                      : 'opacity-0'
                }`}
                onLoad={() => markHomeServicesImageAsLoaded(service.name)}
             />
-            <div className="absolute rounded-t-[6px] inset-0 dark:bg-service-card-image-overlay transition-colors duration-200"></div>
+            <div className="dark:bg-service-card-image-overlay absolute inset-0 rounded-t-[6px] transition-colors duration-200"></div>
          </div>
 
-         <div className="p-4 pt-5 pb-7 relative select-none text-text-inverse dark:text-text transition-colors duration-200">
-            <p className="text-[21px] tracking-[0.38px] font-semibold mb-[9px]">
+         <div className="text-text-inverse dark:text-text relative p-4 pt-5 pb-7 transition-colors duration-200 select-none">
+            <p className="mb-[9px] text-[21px] font-semibold tracking-[0.38px]">
                {service.name}
             </p>
             <div
                ref={contentRef}
-               className={`sm:max-h-[188px] 3xl:max-h-[218px] tracking-[0.12px] pr-2 overflow-auto scrollbar-custom`}
+               className={`3xl:max-h-[218px] scrollbar-custom overflow-auto pr-2 tracking-[0.12px] sm:max-h-[188px]`}
             >
                {service.descList.map((singleDescString) => (
                   <p key={singleDescString} className="mb-1">
@@ -182,13 +182,13 @@ const ServiceCard = ({ service }: { service: Service }) => {
                onMouseDown={startScrolling}
                onMouseUp={stopScrolling}
                onMouseLeave={stopScrolling} // Stops when user moves away
-               className={`hidden sm:block pointer-events-none xl:pointer-events-auto absolute bottom-[3px] left-1/2 transition-opacity duration-400 ${
+               className={`pointer-events-none absolute bottom-[3px] left-1/2 hidden transition-opacity duration-400 sm:block xl:pointer-events-auto ${
                   showScroll
-                     ? 'opacity-100 visibility-visible cursor-pointer'
-                     : 'opacity-0 visibility-hidden cursor-auto'
+                     ? 'visibility-visible cursor-pointer opacity-100'
+                     : 'visibility-hidden cursor-auto opacity-0'
                } px-1 py-2`}
             >
-               <div className="w-0 h-0 border-l-5 border-r-5 border-t-5 border-transparent border-t-[#dadedf] animate-big-bounce"></div>
+               <div className="animate-big-bounce h-0 w-0 border-t-5 border-r-5 border-l-5 border-transparent border-t-[#dadedf]"></div>
             </button>
          </div>
       </div>

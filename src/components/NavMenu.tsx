@@ -14,7 +14,7 @@ const NavMenu = () => {
    return (
       <nav
          id="nav-menu"
-         className={`hidden md:block transition-all duration-[1100ms] ease-in-out ${
+         className={`hidden transition-all duration-[1100ms] ease-in-out md:block ${
             isLoaded
                ? 'translate-x-0'
                : 'translate-x-[calc(100%+16px+1px)] md:translate-x-[calc(100%+48px+1px)]'
@@ -26,23 +26,23 @@ const NavMenu = () => {
                   <NavLink
                      to={to}
                      className={
-                        'block py-[3px] text-xl font-semibold text-text'
+                        'text-text block py-[3px] text-xl font-semibold'
                      }
                   >
                      {label}
                   </NavLink>
-                  <hr className="border-none w-[calc(100%-6px)] h-0.5 rounded bg-light-nav-menu-selected opacity-0 transition-all duration-200" />
+                  <hr className="bg-light-nav-menu-selected h-0.5 w-[calc(100%-6px)] rounded border-none opacity-0 transition-all duration-200" />
                </li>
             ))}
-            <li className="flex justify-center items-center">
+            <li className="flex items-center justify-center">
                <button
                   onClick={toggleDarkMode}
-                  className="px-1 py-[6px] rounded-full cursor-pointer active:brightness-[85%]"
+                  className="cursor-pointer rounded-full px-1 py-[6px] active:brightness-[85%]"
                >
                   {darkMode === false ? (
-                     <BsFillSunFill className="w-[18px] h-[18px] text-text" />
+                     <BsFillSunFill className="text-text h-[18px] w-[18px]" />
                   ) : (
-                     <BsFillMoonStarsFill className="w-[18px] h-[18px] text-text" />
+                     <BsFillMoonStarsFill className="text-text h-[18px] w-[18px]" />
                   )}
                </button>
             </li>

@@ -9,7 +9,7 @@ const LogoWrapper = () => {
    return (
       <div
          onClick={() => navigate('/')}
-         className={`w-[204px] md:w-56 aspect-[224/52.59] cursor-pointer transition-[translate] duration-[1100ms] ease-in-out ${
+         className={`aspect-[224/52.59] w-[204px] cursor-pointer transition-[translate] duration-[1100ms] ease-in-out md:w-56 ${
             isLoaded
                ? 'translate-x-0'
                : '-translate-x-[calc(100%+8px+1px)] md:-translate-x-[calc(100%+24px+1px)]'
@@ -19,7 +19,7 @@ const LogoWrapper = () => {
             src={logo}
             alt=""
             onLoad={() => setIsLoaded(true)}
-            className={`w-[204px] md:w-56 h-auto`}
+            className={`h-auto w-[204px] md:w-56`}
          />
       </div>
    );

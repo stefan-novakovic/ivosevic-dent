@@ -8,19 +8,19 @@ const About = () => {
 
    return (
       <PageLayout>
-         <h1 className="text-3xl md:text-4xl font-semibold mb-12 lg:mb-8 text-text-inverse dark:text-text transition-colors duration-200">
+         <h1 className="text-text-inverse dark:text-text mb-12 text-3xl font-semibold transition-colors duration-200 md:text-4xl lg:mb-8">
             {title}
          </h1>
-         <div className="flex flex-col gap-15 lg:gap-16 max-w-[1780px]">
+         <div className="flex max-w-[1780px] flex-col gap-15 lg:gap-16">
             {staff.map((staffMember) => (
                <div
                   key={staffMember.name}
                   id={staffMember.name.split(' ')[0].toLowerCase()}
-                  className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-8"
+                  className="flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:gap-8"
                >
-                  <div className="w-full aspect-square max-w-xl lg:w-[265px] lg:min-w-[265px] lg:max-w-none xl:w-[323px] xl:min-w-[323px] bg-transparent rounded-lg lg:dark:bg-dark-doc-img-bg lg:transition-colors lg:duration-200">
+                  <div className="lg:dark:bg-dark-doc-img-bg aspect-square w-full max-w-xl rounded-lg bg-transparent lg:w-[265px] lg:max-w-none lg:min-w-[265px] lg:transition-colors lg:duration-200 xl:w-[323px] xl:min-w-[323px]">
                      <div
-                        className="w-full aspect-square max-w-xl lg:w-[265px] lg:min-w-[265px] lg:max-w-none xl:w-[323px] xl:min-w-[323px] lg:border lg:shadow-[0px_0px_10px_-6px_rgba(0,0,0,0.75)] lg:dark:shadow-[0px_0px_12px_-6px_white] border-light-bg dark:border-text rounded-lg overflow-hidden hover:bg-light-bg dark:hover:bg-dark-doc-img-hover relative"
+                        className="border-light-bg dark:border-text hover:bg-light-bg dark:hover:bg-dark-doc-img-hover relative aspect-square w-full max-w-xl overflow-hidden rounded-lg lg:w-[265px] lg:max-w-none lg:min-w-[265px] lg:border lg:shadow-[0px_0px_10px_-6px_rgba(0,0,0,0.75)] xl:w-[323px] xl:min-w-[323px] lg:dark:shadow-[0px_0px_12px_-6px_white]"
                         style={{
                            transitionProperty: 'border-color, background-color',
                            transitionDuration: '300ms, 300ms'
@@ -32,30 +32,30 @@ const About = () => {
                               markAboutDocImageAsLoaded(staffMember.name)
                            }
                            alt=""
-                           className={`w-full max-w-xl lg:w-[265px] lg:min-w-[265px] lg:max-w-none xl:w-[323px] xl:min-w-[323px] aspect-square transition-[opacity,scale,translate] duration-1000 ease-in-out ${
+                           className={`aspect-square w-full max-w-xl transition-[opacity,scale,translate] duration-1000 ease-in-out lg:w-[265px] lg:max-w-none lg:min-w-[265px] xl:w-[323px] xl:min-w-[323px] ${
                               aboutDocLoadedImages[staffMember.name]
-                                 ? 'opacity-100 scale-100 translate-y-0'
-                                 : 'opacity-50 scale-50 translate-y-[calc(100%+1px)]'
+                                 ? 'translate-y-0 scale-100 opacity-100'
+                                 : 'translate-y-[calc(100%+1px)] scale-50 opacity-50'
                            }`}
                         />
-                        <div className="absolute rounded-lg inset-0 lg:dark:bg-dark-doc-img-overlay transition-colors duration-200"></div>
+                        <div className="lg:dark:bg-dark-doc-img-overlay absolute inset-0 rounded-lg transition-colors duration-200"></div>
                      </div>
                   </div>
 
                   <div className="text-text-inverse dark:text-text transition-colors duration-200">
-                     <h2 className="text-2xl tracking-[0.38px] font-semibold mb-1">
+                     <h2 className="mb-1 text-2xl font-semibold tracking-[0.38px]">
                         Dr {staffMember.name}
                      </h2>
-                     <h3 className="lg:text-lg tracking-[1px] mb-4">
+                     <h3 className="mb-4 tracking-[1px] lg:text-lg">
                         {staffMember.degree}
                      </h3>
-                     <p className="lg:text-lg tracking-wide mb-[10px]">
+                     <p className="mb-[10px] tracking-wide lg:text-lg">
                         {staffMember.bio}
                      </p>
-                     <h4 className="text-xl tracking-[0.38px] font-semibold mb-1">
+                     <h4 className="mb-1 text-xl font-semibold tracking-[0.38px]">
                         {professionalTrainingTitle}:
                      </h4>
-                     <p className="lg:text-lg tracking-wide">
+                     <p className="tracking-wide lg:text-lg">
                         {staffMember.professionalTraining}
                      </p>
                   </div>
