@@ -38,19 +38,21 @@
    --color-dark-bg: #1f1f1f;
    --color-text: #fff;
    --color-text-inverse: #000;
-   --color-light-bg-service-card: #fff;
-   --color-dark-bg-service-card: #2a2a2a;
+   --color-light-bg-card: #fff;
+   --color-dark-bg-card: #2a2a2a;
    --color-light-service-card-shadow: #d1d5dc;
    --color-dark-service-card-shadow: #1f2020;
    --color-service-card-image-overlay: rgba(0, 0, 0, 0.145);
    --color-light-nav-menu-selected: #fff;
    --color-light-page-layout-bg: #fff;
-   --color-dark-page-layout-bg: #3e3c3c;
-   --color-dark-mobile-page-layout-bg: #1f1f1f;
+   --color-dark-page-layout-bg: #1f1f1f;
    --color-light-hero-overlay: rgba(0, 0, 0, 0.25);
    --color-dark-hero-overlay: rgba(0, 0, 0, 0.375);
    --color-mobile-overlay: #0000001e;
    --color-footer-border: #fff;
+   --color-dark-doc-img-bg: #2a2a2a;
+   --color-dark-doc-img-overlay: rgba(0, 0, 0, 0.085);
+   --color-dark-doc-img-hover: rgba(0, 0, 0, 0.275);
 
    --animate-selected-page: selected-page 0.325s ease;
    --animate-big-bounce: big-bounce 2.5s infinite ease;
